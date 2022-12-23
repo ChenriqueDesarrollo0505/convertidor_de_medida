@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de medida</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container_logo">
+            <img class="img_logo" src="img/logo_cj.png" alt="">
+            <p class="p_logo">ChenDev</p>
+        </div>
+        <div class="container_menu">
+            <p>Inicio</p>
+            <p>Unidades</p>
+            <p>iniciar sesion</p>
+        </div>
+    </header>
+    <section class="container_seccion">
+        <div class="container_seccion_convertidor">
+            <h1>Convertidor de Unidades</h1>
+            <div class="container_unidades">
+                <p>Kilogramos</p>
+                <input id="kg" type="number">
+            </div>
+            <div class="container_unidades">
+                <p>Libras</p>
+                <input id="lb" type="number">
+            </div>
+            <div class="container_unidades">
+                <p>Onzas</p>
+                <input id="oz" type="number">
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div class="container_footer">Convertidor de unidades</div>
+    </footer>
+</body>
+
+</html>
+<script>
+    var input_kg = document.getElementById("kg")
+    var input_lb = document.getElementById("lb")
+    var input_oz = document.getElementById("oz")
+
+    function convertidor_kg() {
+        document.getElementById("lb").value = (input_kg.value / 0.45359237).toFixed(2);
+        document.getElementById("oz").value = (input_kg.value / 0.02834952).toFixed(2);
+    }
+
+    function convertidor_lb() {
+        document.getElementById("kg").value = (input_lb.value * 0.45359237).toFixed(2);
+        document.getElementById("oz").value = (input_lb.value * 16).toFixed(2);
+    }
+
+    function convertidor_oz() {
+
+        document.getElementById("kg").value = (input_oz.value * 0.02834952).toFixed(2);
+        document.getElementById("lb").value = (input_oz.value / 16).toFixed(2);
+
+    }
+
+    input_kg.addEventListener('input', convertidor_kg);
+    input_lb.addEventListener('input', convertidor_lb);
+    input_oz.addEventListener('input', convertidor_oz);
+    window.addEventListener('load', convertidor_kg);
+</script>
