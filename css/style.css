@@ -5,10 +5,18 @@ body {
 }
 
 header {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: linear-gradient(to bottom, rgb(127, 206, 102) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+@media(max-width: 480px) {
+    header {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
 .container_logo {
